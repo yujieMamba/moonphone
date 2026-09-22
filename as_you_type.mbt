@@ -39,8 +39,8 @@ pub fn AsYouType::push(self : AsYouType, c : Char) -> AsYouType {
 }
 
 ///|
-pub fn AsYouType::push_string(mut self : AsYouType, text : String) -> AsYouType {
-  for c in text { self = self.push(c) }
+pub fn AsYouType::push_string(self : AsYouType, text : String) -> AsYouType {
+  let mut result = self\n  for c in text { result = result.push(c) }
   self
 }
 
