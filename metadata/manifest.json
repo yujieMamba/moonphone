@@ -1,0 +1,9 @@
+{
+  "upstream": "python-phonenumbers",
+  "version": "8.13.52",
+  "regions": 245,
+  "non_geographic_codes": 9,
+  "records": 254,
+  "sha256_unformatted": "7b7650e6e86d9b0175b66a84b8b8ba2c60795bbb1a633db108e8881a086c8df3",
+  "license": "Apache-2.0"
+}
