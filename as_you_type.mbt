@@ -22,16 +22,20 @@ pub fn AsYouType::formatted(self : AsYouType) -> String {
 
 ///|
 /// Feed one character and return the best available presentation.
-pub fn AsYouType::push(mut self : AsYouType, c : Char) -> AsYouType {
-  if decimal_digit(c) is Some(d) { self.input += d.to_string() }
-  else if c == '+' && self.input == "" { self.input += "+" }
-  else if c == 'x' || c == 'X' { self.input += " x" }
-  let body = if self.input.has_prefix("+") { self.input } else { self.input }
-  self.last = match parse(body, default_region=self.region) {
-    Ok(n) => format(n, National)
-    Err(_) => body
+pub fn AsYouType::push(self : AsYouType, c : Char) -> AsYouType {
+  let mut input = self.input
+  if decimal_digit(c) is Some(d) {
+    input = input + d.to_string()
+  } else if c == '+' && input == "" {
+    input = input + "+"
+  } else if c == 'x' || c == 'X' {
+    input = input + " x"
   }
-  self
+  let formatted = match parse(input, default_region=self.region) {
+    Ok(n) => format(n, National)
+    Err(_) => input
+  }
+  { ..self, input, last: formatted, }
 }
 
 ///|
