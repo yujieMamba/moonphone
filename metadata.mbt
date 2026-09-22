@@ -12,7 +12,7 @@ priv struct NumberFormat {
   replacement : String
   leading : Array[String]
   prefix_rule : String
-  prefix_optional : Bool
+  _prefix_optional : Bool
   carrier_rule : String
 }
 
@@ -26,7 +26,7 @@ priv struct Metadata {
   prefix_pattern : String
   prefix_transform : String
   leading : String
-  main_region : Bool
+  _main_region : Bool
   general : Description
   types : Array[(NumberType, Description)]
   formats : Array[NumberFormat]

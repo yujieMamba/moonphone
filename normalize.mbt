@@ -142,7 +142,7 @@ fn split_extension(text : String) -> Result[(String, String), ParseError] {
   for marker in markers {
     let pieces = upper.split(marker).to_array()
     if pieces.length() == 2 {
-      let tail = pieces[1].to_string().trim().to_string()
+      let tail = pieces[1].to_owned().trim().to_owned()
       if tail == "" {
         return Err(InvalidExtension)
       }
@@ -155,7 +155,7 @@ fn split_extension(text : String) -> Result[(String, String), ParseError] {
           return Err(InvalidExtension)
         }
       }
-      return Ok((pieces[0].to_string(), extension))
+      return Ok((pieces[0].to_owned(), extension))
     }
   }
   Ok((text, ""))

@@ -93,9 +93,9 @@ pub fn is_valid_for_region(number : PhoneNumber, region : String) -> Bool {
 fn test_lengths(
   length : Int,
   lengths : Array[Int],
-  local : Array[Int],
+  local_lengths : Array[Int],
 ) -> Possibility {
-  if local.contains(length) {
+  if local_lengths.contains(length) {
     return PossibleLocalOnly
   }
   if lengths.contains(length) {
@@ -158,7 +158,7 @@ pub fn possibility_for_type(
     return possibility(number)
   }
   let lengths = []
-  let local = []
+  let local_lengths = []
   for (t, desc) in candidates[0].types {
     if t == kind ||
       (kind == FixedLineOrMobile && (t == FixedLine || t == Mobile)) {
@@ -168,13 +168,13 @@ pub fn possibility_for_type(
         }
       }
       for n in desc.local_lengths {
-        if !local.contains(n) {
-          local.push(n)
+        if !local_lengths.contains(n) {
+          local_lengths.push(n)
         }
       }
     }
   }
-  test_lengths(number.national_number.length(), lengths, local)
+  test_lengths(number.national_number.length(), lengths, local_lengths)
 }
 
 ///|

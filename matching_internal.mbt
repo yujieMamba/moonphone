@@ -1,6 +1,6 @@
 ///|
 // Only trusted, pinned metadata patterns enter this bounded cache.
-let regex_cache : Map[String, @regexp.Regexp] = {}
+let regex_cache : Map[String, @regexp.Regexp] = Map([])
 
 ///|
 fn regex_match(
@@ -59,7 +59,7 @@ fn capture_replace(
       chars[i + 1] <= '9' {
       let group = chars[i + 1].to_int() - 48
       if captures.get(group) is Some(value) {
-        out.write_string(value.to_string())
+        out.write_string(value.to_owned())
       }
       i += 2
     } else {
@@ -91,7 +91,7 @@ fn replace_literal(
   if needle == "" {
     return text
   }
-  text.split(needle).map(v => v.to_string()).to_array().join(replacement)
+  text.split(needle).map(v => v.to_owned()).to_array().join(replacement)
 }
 
 ///|
