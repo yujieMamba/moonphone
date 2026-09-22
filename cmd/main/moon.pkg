@@ -1,0 +1,5 @@
+// import {
+//   "yujieMamba/moonphone" @lib,
+// }
+
+pkgtype(kind: "executable")

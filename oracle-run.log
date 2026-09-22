@@ -1,0 +1,123 @@
+Warning: [0082]
+   ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\matching_internal.mbt:3:49 ]
+   │
+ 3 │ let regex_cache : Map[String, @regexp.Regexp] = {}
+   │                                                 ─┬  
+   │                                                  ╰── Warning (ambiguous_braces): The `{}` is ambiguous among empty map literal, block expression, empty struct literal and empty JSON object. Use `Map([])` for an empty map, `TypeName::{}` for an empty struct literal, `Json::empty_object()` for an empty JSON object, or `{ () }` for an empty block.
+───╯
+Warning: [0020]
+    ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\matching_internal.mbt:62:32 ]
+    │
+ 62 │         out.write_string(value.to_string())
+    │                                ────┬────  
+    │                                    ╰────── Warning (deprecated): Use `to_owned` to allocate an owned String from a StringView; use `Show::to_string` or format strings for display
+────╯
+Warning: [0020]
+    ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\matching_internal.mbt:94:33 ]
+    │
+ 94 │   text.split(needle).map(v => v.to_string()).to_array().join(replacement)
+    │                                 ────┬────  
+    │                                     ╰────── Warning (deprecated): Use `to_owned` to allocate an owned String from a StringView; use `Show::to_string` or format strings for display
+────╯
+Warning: [0007]
+   ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\metadata.mbt:6:3 ]
+   │
+ 6 │   example : String
+   │   ───┬───  
+   │      ╰───── Warning (unused_field): Field 'example' is never read
+───╯
+Warning: [0007]
+    ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\metadata.mbt:15:3 ]
+    │
+ 15 │   prefix_optional : Bool
+    │   ───────┬───────  
+    │          ╰───────── Warning (unused_field): Field 'prefix_optional' is never read
+────╯
+Warning: [0007]
+    ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\metadata.mbt:24:3 ]
+    │
+ 24 │   preferred_international_prefix : String
+    │   ───────────────┬──────────────  
+    │                  ╰──────────────── Warning (unused_field): Field 'preferred_international_prefix' is never read
+────╯
+Warning: [0007]
+    ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\metadata.mbt:25:3 ]
+    │
+ 25 │   national_prefix : String
+    │   ───────┬───────  
+    │          ╰───────── Warning (unused_field): Field 'national_prefix' is never read
+────╯
+Warning: [0007]
+    ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\metadata.mbt:29:3 ]
+    │
+ 29 │   main_region : Bool
+    │   ─────┬─────  
+    │        ╰─────── Warning (unused_field): Field 'main_region' is never read
+────╯
+Warning: [0020]
+     ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\normalize.mbt:145:28 ]
+     │
+ 145 │       let tail = pieces[1].to_string().trim().to_string()
+     │                            ────┬────  
+     │                                ╰────── Warning (deprecated): Use `to_owned` to allocate an owned String from a StringView; use `Show::to_string` or format strings for display
+─────╯
+Warning: [0020]
+     ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\normalize.mbt:145:47 ]
+     │
+ 145 │       let tail = pieces[1].to_string().trim().to_string()
+     │                                               ────┬────  
+     │                                                   ╰────── Warning (deprecated): Use `to_owned` to allocate an owned String from a StringView; use `Show::to_string` or format strings for display
+─────╯
+Warning: [0020]
+     ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\normalize.mbt:158:28 ]
+     │
+ 158 │       return Ok((pieces[0].to_string(), extension))
+     │                            ────┬────  
+     │                                ╰────── Warning (deprecated): Use `to_owned` to allocate an owned String from a StringView; use `Show::to_string` or format strings for display
+─────╯
+Warning: [0035]
+    ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\validation.mbt:96:3 ]
+    │
+ 96 │   local : Array[Int],
+    │   ──┬──  
+    │     ╰──── Warning (reserved_keyword): The word `local` is reserved for possible future use. Please consider using another name.
+────╯
+Warning: [0035]
+    ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\validation.mbt:98:6 ]
+    │
+ 98 │   if local.contains(length) {
+    │      ──┬──  
+    │        ╰──── Warning (reserved_keyword): The word `local` is reserved for possible future use. Please consider using another name.
+────╯
+Warning: [0035]
+     ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\validation.mbt:161:7 ]
+     │
+ 161 │   let local = []
+     │       ──┬──  
+     │         ╰──── Warning (reserved_keyword): The word `local` is reserved for possible future use. Please consider using another name.
+─────╯
+Warning: [0035]
+     ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\validation.mbt:171:13 ]
+     │
+ 171 │         if !local.contains(n) {
+     │             ──┬──  
+     │               ╰──── Warning (reserved_keyword): The word `local` is reserved for possible future use. Please consider using another name.
+─────╯
+Warning: [0035]
+     ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\validation.mbt:172:11 ]
+     │
+ 172 │           local.push(n)
+     │           ──┬──  
+     │             ╰──── Warning (reserved_keyword): The word `local` is reserved for possible future use. Please consider using another name.
+─────╯
+Warning: [0035]
+     ╭─[ C:\Users\42673\Desktop\工作区\随用随清\moonphone\validation.mbt:177:58 ]
+     │
+ 177 │   test_lengths(number.national_number.length(), lengths, local)
+     │                                                          ──┬──  
+     │                                                            ╰──── Warning (reserved_keyword): The word `local` is reserved for possible future use. Please consider using another name.
+─────╯
+[yujieMamba/moonphone] test oracle_generated_test.mbt:72 ("oracle AR") failed: oracle_test.mbt:11:3-11:65@yujieMamba/moonphone FAILED: `"11 15-2345-6789" != "011 15-2345-6789"`
+diff:
+-"11 15-2345-6789" +"011 15-2345-6789"
+Total tests: 263, passed: 262, failed: 1.

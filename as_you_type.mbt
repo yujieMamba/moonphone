@@ -44,7 +44,7 @@ pub fn AsYouType::push_string(self : AsYouType, text : String) -> AsYouType {
   for c in text {
     result = result.push(c)
   }
-  self
+  result
 }
 
 ///|
