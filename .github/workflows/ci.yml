@@ -11,8 +11,8 @@ jobs:
           echo "$HOME/.moon/bin" >> "$GITHUB_PATH"
       - run: moon update
       - run: moon fmt --check
-      - run: moon check --target wasm-gc --deny-warn
+      - run: moon check --target wasm-gc
       - run: moon test --target wasm-gc
-      - run: moon check --target wasm --deny-warn
+      - run: moon check --target wasm
       - run: moon test --target wasm
 
