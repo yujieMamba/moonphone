@@ -1,0 +1,19 @@
+{
+  "oracle": "8.13.52",
+  "unique_examples": 1128,
+  "geographic_regions": 245,
+  "non_geo_codes": 9,
+  "comparisons": [
+    "international parse",
+    "national digits",
+    "region",
+    "type",
+    "validity",
+    "possibility",
+    "E164",
+    "INTERNATIONAL",
+    "NATIONAL",
+    "RFC3966",
+    "national parse roundtrip"
+  ]
+}

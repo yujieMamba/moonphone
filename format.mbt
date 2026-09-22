@@ -33,9 +33,9 @@ fn format_national_digits(
   if national {
     if carrier != "" && f.carrier_rule != "" {
       let rule = replace_literal(f.carrier_rule, "$CC", carrier)
-      replacement = replace_literal(replacement, "$1", rule)
+      replacement = apply_first_group_rule(replacement, rule)
     } else if f.prefix_rule != "" {
-      replacement = replace_literal(replacement, "$1", f.prefix_rule)
+      replacement = apply_first_group_rule(replacement, f.prefix_rule)
     }
   }
   capture_replace(replacement, m)
@@ -124,4 +124,21 @@ pub fn format_with_carrier(
       number.extension,
     )
   }
+}
+
+///|
+// Upstream prefix rules use $1 as a placeholder for the first displayed group;
+// that group need not be capture 1 (Argentina discards its mobile marker).
+fn apply_first_group_rule(replacement : String, rule : String) -> String {
+  let chars = replacement.to_array()
+  for i = 0; i + 1 < chars.length(); i = i + 1 {
+    if chars[i] == '$' && chars[i + 1] >= '1' && chars[i + 1] <= '9' {
+      let group = slice_chars(replacement, i, i + 2)
+      let expanded = replace_literal(rule, "$1", group)
+      return slice_chars(replacement, 0, i) +
+        expanded +
+        slice_chars(replacement, i + 2, chars.length())
+    }
+  }
+  replacement
 }
