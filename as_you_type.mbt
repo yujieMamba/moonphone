@@ -40,7 +40,10 @@ pub fn AsYouType::push(self : AsYouType, c : Char) -> AsYouType {
 
 ///|
 pub fn AsYouType::push_string(self : AsYouType, text : String) -> AsYouType {
-  let mut result = self\n  for c in text { result = result.push(c) }
+  let mut result = self
+  for c in text {
+    result = result.push(c)
+  }
   self
 }
 
